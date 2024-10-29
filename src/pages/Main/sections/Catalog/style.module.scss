@@ -1,0 +1,166 @@
+
+
+.wrap{
+	position: relative;
+	@include sec-p;
+
+	[alt=texture]{
+		position: absolute;
+		inset: 0;
+		width: 100%; height: 100%;
+		object-fit: cover;
+		object-position: center center;
+	}
+
+
+	[data-title]{
+		grid-area: title;
+	}
+}
+
+
+
+.cont{
+	@include flex-col(40px);
+
+	@include is('laptop'){
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: 
+			'title   title'
+			'preview info '
+			'text    text '
+		;
+		gap: 100px 40px;
+	};
+}
+
+.text{
+	grid-area: text;
+	@include a-value(fz, 14px, 22px);
+	@include flex-col(30px);
+	@include m-center;
+	text-align: center;
+	max-width: 900px;
+
+	p{
+		font-weight: 500;
+	}
+
+	span{
+		color: hue('decor');
+		font-weight: 700;
+	}
+}
+
+.info{
+	$p: 20px;
+	$r: 20px;
+	grid-area: info;
+	@include flex-col(20px);
+	background: rgba($color: #595858, $alpha: 0.1);
+	backdrop-filter: blur(10px);
+	box-shadow: -5px 5px 12px cl('b', 0.2);
+	overflow: hidden;
+	border-top-right-radius: $r;
+	border-top-left-radius: $r;
+	min-height: 240px;
+
+	@include is('laptop'){
+		
+		@include flex-col(30px);
+	};
+
+	&__head{
+		@include flex-row;
+		background: hue('sec-bg');
+		border-radius: inherit;
+
+		.pag{
+			&:first-child{
+				border-radius: inherit;
+				border-top-right-radius: 0;
+			}
+			&:last-child{
+				border-radius: inherit;
+				border-top-left-radius: 0;
+			}
+		}
+	}
+
+	&__tags{
+		@include flex-row(10px);
+		padding-right: $p;
+		padding-left: $p;
+		flex-wrap: wrap;
+	}
+
+	&__content{
+		flex: 1;
+		padding-right: $p;
+		padding-left: $p;
+		line-height: 1.5;
+		@include a-value(fz, 12px, 18px);
+	}
+}
+
+
+.pag{
+	@include a-value(fz, 14px, 20px);
+	padding:1em;
+	flex: 1;
+	text-align: center;
+	user-select: none;
+	cursor: pointer;
+	color: hue('second');
+	font-weight: 500;
+	border: 0.1em solid hue('decor');
+	border-color: transparent;
+	@include flow((color, border-color), 0.3s);
+
+	@include hover{
+		color: hue('decor');
+	}
+
+	&[data-active=true]{
+		color: hue('decor');
+		border-color: currentColor;
+	}
+}
+
+.tag{
+	@include a-value(fz, 8px, 12px);
+	background-color: hue('decor');
+	padding: 0.6em 1.2em;
+	border-radius: 10em;
+	box-shadow: 0.1em 0.1em 1em cl('b', 0.2);
+	white-space: nowrap;
+}
+
+.preview{
+	grid-area: preview;
+	position: relative;
+	height: 200px;
+
+	@include is('laptop'){
+	height: 300px;
+	};
+
+	[alt=preview]{
+		@include pos-center;
+		object-fit: contain;
+		object-position: center center;
+		width: 100%; height: 100%;
+	}
+
+
+	[data-icon]{
+		position: absolute;
+		@include a-value(fz, 50px, 90px);
+		color: hue('decor');
+	}
+
+	[data-icon=rt]{	right: 0; top: 0; }
+	[data-icon=lb]{	left: 0; bottom: 0; }
+
+}

@@ -1,0 +1,90 @@
+.wrap{
+	height: clamp(600px, 100vh, 1000px);
+	background: url('/images/mobile-intro.png') no-repeat center center / cover;
+	@include flex-col;
+
+	@include is('laptop'){
+		background-image: url('/images/intro-fone.png');
+	}
+
+
+	[data-btn=phone]{}
+	[data-btn=desktop]{display: none}
+
+	@include is('laptop'){
+		[data-btn=phone]{display: none}
+		[data-btn=desktop]{display: inline-block}
+	}
+}
+
+
+.bar{
+	display: none;
+	position: relative;
+
+
+	&__line{
+		position: absolute;
+		right: 60px; top: 0;
+		min-height: clamp(600px, 100vh, 1000px);
+		
+		@include is('desktop'){
+			right: 200px;		
+		}
+	}
+	
+	@include is('laptop'){
+		display: block;
+	}
+	
+}
+
+
+.head{
+	background: cl('b', 0.4);
+	backdrop-filter: blur(20px);
+	padding: 50px 0;
+	padding-top: 100px;
+
+	@include is('laptop'){
+		margin-top: 80px;
+		padding: 50px 0;
+	}
+
+
+	&__content{
+		@include flex-col(20px);
+
+		
+		@include is('laptop'){
+			gap: 50px;
+		}
+
+		h1{
+			@include a-value(fz, 26px, 42px);
+		}
+		p{
+			@include a-value(fz, 14px, 22px);
+			@include a-value(max-w, 280px, 580px);
+			text-align: justify;
+		}
+	}
+
+	
+	
+}
+
+
+.body{
+	flex: 1;
+	width: 100%;
+	@include flex-col(30px, 'x-center', 'y-center');
+
+	@include is('laptop'){
+		align-items: flex-start;
+	}
+
+	&__socials{
+		@include is('laptop'){display: none !important}
+	}
+}

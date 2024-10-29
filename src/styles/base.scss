@@ -1,0 +1,62 @@
+html, body{
+	background: hue('main-bg');
+	color: hue('text');
+	font-family: 'Manrope', Arial, Helvetica, sans-serif;
+}
+
+@media(width < screen('tablet')){
+	*{
+		scroll-margin-top: var(--header-h);		
+	}
+}
+
+
+h1,h2,h3,h4,h5,h6{
+	font-weight: 900;
+	line-height: 1.2;
+}
+
+p{
+	line-height: 1.4;
+	font-weight: 100;
+}
+
+
+
+[data-title]{
+	--w: 60px;
+	@include is('laptop'){--w: 100px}
+	@include a-value(fz, 26px, 46px);
+	@include flex-center;
+	text-transform: uppercase;
+	position: relative;
+	gap: 0.5em;
+	justify-content: flex-start;
+
+	&[data-title=sec]{		
+		font-weight: 100;
+		@include a-value(fz, 22px, 42px);
+		&::before, &::after{display: none !important;}
+
+		span{
+			color: hue('decor');
+			font-weight: 900;
+		}
+	}
+
+	&[data-title=center]{
+		text-align: center;
+		justify-content: center;
+		&::after{display: block}
+	}
+
+	&::before, &::after{
+		content: '';
+		display: block;
+		width: var(--w);
+		height: calc(var(--w) / 10);
+		background-color: hue('decor');
+	}
+
+	&::after{display: none}
+}

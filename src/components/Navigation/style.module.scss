@@ -1,0 +1,53 @@
+.wrap{
+	@include flex-col(5px);
+	text-align: center;
+
+	&[data-type=mobile]{
+		a{
+			font-size: 16px;
+		}
+	}
+
+	&[data-type=row]{
+		align-items: flex-start;
+		@include is('tablet'){
+			@include flex-row(5px, 'y-center');
+		};
+
+		a{
+			@include a-value(fz, 14px, 18px);
+		}
+		a::before{
+			display: none;			
+		}
+	}
+
+	a{
+		font-size: 22px;
+		font-weight: 500;
+		color: hue('text');
+		padding: 0.5em;
+		position: relative;
+		white-space: nowrap;
+		@include flow(color, 0.2s);
+		
+		@include hover{
+			&::before{scale: 1}
+			color: hue('decor');
+		}
+
+		&::before{
+			@include pseudo;
+			@include pos-center;
+			@include flow((scale, opacity), 0.3s);
+			z-index: -1;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			background: hue('text');
+			scale: 0;
+		}
+	}
+
+
+}

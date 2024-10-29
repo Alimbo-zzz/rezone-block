@@ -1,0 +1,42 @@
+.wrap{
+	@include flex-row(20px);
+
+
+	&[data-type=contacts]{
+		justify-content: space-between;
+
+
+		.icon{
+			background-color: transparent;
+			box-shadow: none;
+			font-size: 40px;
+
+			&:hover{
+				color: hue('decor');
+				background: transparent;
+			}
+		}
+	}
+	
+}
+
+
+.icon{
+	position: relative;
+	height: 50px; 
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	background-color: hue('text');
+	color: hue('decor');
+	font-size: 28px;
+	box-shadow: 0 0.2em 0.2em cl('b', 0.2);
+	@include a-click((background-color 0.4s, color 0.4s));
+	svg{ @include pos-center }
+
+	@include hover{
+		color: hue('text');
+		background-color: hue('decor');
+	}
+
+	&[name=telegram]{ svg{ left: 48% } }
+}

@@ -1,0 +1,19 @@
+.wrap{
+	z-index: z('block');
+	background: hue('decor');
+	width: 260px;
+	height: 100%;
+	padding: 60px 20px;
+	
+	@include flex-col(30px, 'x-center');
+	
+
+	hr{
+		width: 100%;
+	}
+}
+
+
+.logo{
+	font-size: 160px;
+}

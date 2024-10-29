@@ -1,0 +1,68 @@
+.wrap{
+	@include sec-p;
+	background-color: hue('sec-bg');
+}
+
+
+
+.cont{
+	@include flex-col(40px);
+
+	@include is('laptop'){
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px 40px;
+		grid-template-areas: 
+			'title title title'
+			'links soc map'
+			'links text map'
+		;
+		align-items: center;
+	};
+
+	[data-title]{
+		margin-bottom: 1em;
+		grid-area: title;
+	}
+
+
+	p{
+		@include a-value(fz, 14px, 18px);
+		grid-area: text;
+		
+		@include is('laptop'){text-align: center}
+	}
+}
+
+
+.links{
+	@include flex-col(20px);
+	align-items: flex-start;
+	grid-area: links;
+
+	&__item{
+		font-size: 18px;
+		@include flex-row(15px, 'y-center', 'x-start');
+		color: hue('text');
+		a{color: initial;}
+		svg{font-size: 1.4em; color: hue('decor');}
+	}
+}
+
+.soc{
+	grid-area: soc;
+
+	@include is('laptop'){
+		justify-content: center !important;
+		gap: 40px;
+		align-self: flex-end;
+	}
+}
+
+
+.map{
+	grid-area: map;
+	img{
+		width: 100%;
+	}
+}

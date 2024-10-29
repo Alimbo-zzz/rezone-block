@@ -1,0 +1,19 @@
+.btn{
+	display: inline-block;
+	@include a-value(fz, 16px, 18px);
+	color: hue('text');
+	background: hue('decor');
+	text-align: center;
+	text-transform: uppercase;
+	padding: 0.7em 1.2em;
+	box-shadow: 0 0.2em 0.2em cl('b', 0.2);
+	cursor: pointer;
+	transition: scale 0.15s anim('bubble');
+	min-width: 140px;
+	font-weight: 500;
+
+	&:active{scale: 0.9}
+
+	a{color:  currentColor}
+
+}

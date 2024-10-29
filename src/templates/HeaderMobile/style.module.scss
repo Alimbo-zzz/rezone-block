@@ -1,0 +1,71 @@
+:root{
+	--header-h: 60px;
+}
+
+.wrap{
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+	z-index: z('fixed');
+	user-select: none;
+	min-width: var(--w-min);
+	overflow: hidden;
+	max-height: var(--header-h);
+	padding-top: 8px;
+	padding-bottom: 24px;
+	@include flex-col(20px);
+	@include flow((max-height, backdrop-filter, background), 0.4s);
+
+	[data-cont]{
+		width: 100%;
+	}
+
+	&[data-active=true]{
+		max-height: 400px;
+		background: cl('b', 0.4);
+		backdrop-filter: blur(40px);
+	}
+
+	&[data-fixed=true]{
+		position: fixed;
+		background: cl('b', 0.4);
+		backdrop-filter: blur(40px);
+		animation: fix 0.5s ease forwards;
+	}
+
+
+	@include is('laptop'){
+		display: none;
+	}
+
+	svg{
+		$prop: calc(var(--header-h) - 20px);
+		height: $prop;
+		width: $prop;
+		color: hue('text');
+		translate: 0 4px;
+	}
+}
+
+
+.menu{
+	flex: 1;
+}
+
+.content{
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+
+@keyframes fix{
+	0%{
+		translate: 0 calc(-100% - 10px);
+	}
+	100%{
+		translate: 0 0;
+	}
+}

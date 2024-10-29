@@ -1,0 +1,23 @@
+
+
+
+[data-cont]{
+	--p: 20px;
+	--w: var(--w-min);
+	margin: 0 auto;
+	max-width: calc(var(--w) - var(--p));
+	
+	@media(width > screen('phone')){--w: var(--w-phone)}
+	@media(width > screen('tablet')){--w: var(--w-tablet)}
+	@media(width > screen('laptop')){
+		--w: var(--w-laptop);
+		--p: 40px;
+	}
+	@media(width > screen('desktop')){--w: var(--w-desktop)}
+}
+
+
+body{
+	min-width: var(--w-min);
+	overflow-x: hidden;
+}
