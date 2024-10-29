@@ -31,7 +31,7 @@ export default ({className}) => {
 						{slides.map((el, i) => <SwiperSlide className={cls.swiper__slide} key={i}>
 							<div className={cls.review}>
 								<div className={cls.review__preview}>
-									<img src="/images/avatar.png" />
+									<img src="images/avatar.png" />
 								</div>
 								<p className={cls.review__text}>Недавно мы приобрели бетонные блоки у компании Rezone Block, и остались очень довольны качеством продукции и уровнем сервиса. С самого начала нашей работы с ними командa была готова ответить на все наши вопросы и предоставить детальную информацию о различных типах блоков, которые они предлагают</p>
 								<div className={cls.review__box}>

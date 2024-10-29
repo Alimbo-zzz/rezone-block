@@ -8,7 +8,7 @@ export default ({className}) => {
 	const ops = {
 		className,
 		preview: {
-			src: '/images/team.png',
+			src: 'images/team.png',
 			alt: 'company'
 		},
 		title: <>Немного <span>[о команде]</span></>,

@@ -27,7 +27,7 @@ export default ({className}) => {
 				<motion.p variants={anim.scaleIn}>Мы всегда рады ответить на ваши вопросы и&nbsp;помочь с выбором бетонных блоков, которые подойдут именно вам. Свяжитесь с&nbsp;нами любым удобным способом!</motion.p>
 				<Socials className={cls.soc} type='contacts'/>
 				<motion.div variants={anim.scaleIn} className={cls.map}>
-					<img src="/images/map.png"  />
+					<img src="images/map.png"  />
 				</motion.div>
 			</div>
 		</motion.section>

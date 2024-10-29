@@ -43,19 +43,19 @@ export default ({className}) => {
 			title: 'Пеплоблоки',
 			tags: ['устойчивость к влаге и температурным перепадам', 'высокая прочность'],
 			text: 'Фундаментные блоки сплошные (ФБС) используются для создания прочных и надёжных фундаментов в различных типах строений.',
-			preview: '/images/blocks/пеплоблок.png'
+			preview: 'images/blocks/пеплоблок.png'
 		},
 		{
 			title: 'Евроблоки',
 			tags: ['легкость', 'теплоизоляция', 'звукоизоляция'],
 			text: 'Строительные блоки, изготовленные из цемента, песка и пепла. Они обладают отличной теплоизоляцией и звукоизоляцией, а также высокой прочностью.',
-			preview: '/images/blocks/евроблок.png'
+			preview: 'images/blocks/евроблок.png'
 		},
 		{
 			title: 'ФБС-блоки',
 			tags: ['улучшенная прочность', 'повышенные теплоизоляционные характеристики'],
 			text: 'Это блоки с улучшенными характеристиками, которые часто используются в современном строительстве для стен и фундаментов.',
-			preview: '/images/blocks/фбс.png'
+			preview: 'images/blocks/фбс.png'
 		},
 	])
 	const [activeItem, setActiveItem] = useState(0);
@@ -84,7 +84,7 @@ export default ({className}) => {
 
 	return (<>
 		<motion.section {...secOps} id='catalog' className={clsx(cls.wrap, className)}>
-			<img src="/images/texture.png" alt="texture" />
+			<img src="images/texture.png" alt="texture" />
 			<div data-cont className={cls.cont}>
 				<motion.h2 variants={anim.fadeIn} custom={{turn: 'left'}} data-title>Каталог</motion.h2>
 				<div className={cls.preview}>

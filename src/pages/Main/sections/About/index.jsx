@@ -8,7 +8,7 @@ export default ({className}) => {
 	const ops = {
 		className,
 		preview: {
-			src: '/images/company.png',
+			src: 'images/company.png',
 			alt: 'company'
 		},
 		title: <>Компания <span>[Rezone Block]</span></>,

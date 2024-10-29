@@ -48,7 +48,7 @@ export default ({className}) => {
 					{dataPhone.map((el, i) => <motion.p custom={i * 0.3} variants={anim.scaleIn} key={el}>{el}</motion.p>)}
 				</div>
 				<div data-block='desk'>
-					<img src="/images/facts.png" alt="preview" />
+					<img src="images/facts.png" alt="preview" />
 					<ul className={cls.grid}>
 						{dataDesk.map(el => 
 							<motion.li  {...secOps} viewport={{once: true, amount: 0.6}} key={el.span} className={cls.grid__item}>
