@@ -8,12 +8,11 @@ const App = (props) => {
 	
 
 	return (<>
-		<Main/>
-		{/* <Routes>
+		<Routes>
 			<Route index element={<> <Main/> </>}/>
 			<Route path='/privacy-policy' element={<> <PrivacyPolicy/> </>}/>
 			<Route path='*' element={<> <Error/> </>}/>
-		</Routes> */}
+		</Routes>
 
 	</>);
 }

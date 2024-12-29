@@ -1,0 +1,14 @@
+.wrap{
+	display: flex;
+	flex-direction: column;
+	white-space: pre-line;
+	gap: 1em;
+	padding: 6em 0;
+
+	h1,h2,a{
+		color: hue('decor');
+	}
+	h1{
+		margin-bottom: 1em;
+	}
+}
